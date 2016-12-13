@@ -1,10 +1,13 @@
+// index.html.jade
 doctype html
 html
   head
     meta(charset='UTF-8')
-    title My Blog
+    title Docpad Blog
+    link(type='text/css', rel='stylesheet', href='css/all.css')
   body
-    h1 My Blog
+    h1 Docpad Blog
+    p This is an example docpad blog!
     h2 Post List
     ul.posts
       each post in getCollection('html').findAll({layout: 'post'}).toJSON()
@@ -15,3 +18,4 @@ html
       each tag in getFilesAtPath('tags/').toJSON()
         li.tag
           a(href='./#{tag.url}')= tag.title
+    
